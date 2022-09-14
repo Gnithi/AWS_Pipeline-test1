@@ -8,11 +8,11 @@ phases:
   build:
     commands:
       - echo "Entered build phase"
-      - mvn clean prepare-package war:exploded
+      - gradle clean build
   post_build:
     commands:
       - echo "Entered the post-build phase"
-      - mv build/libs/aws-code-pipeline-0.0.1-SNAPSHOT11.jar ./deploy
+      - mv build/libs/aws-code-pipeline-0.0.1-SNAPSHOT.jar ./deploy
 artifacts:
   files:
     - deploy/aws-code-pipeline-0.0.1-SNAPSHOT.jar
